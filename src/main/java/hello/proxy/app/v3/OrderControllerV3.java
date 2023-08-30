@@ -15,11 +15,11 @@ public class OrderControllerV3 {
     @GetMapping("/v3/request")
     public String request(String itemId) {
         orderService.orderItem(itemId);
-        return "ok";
+        return "response";
     }
 
     @GetMapping("/v3/no-log")
     public String noLog() {
-        return "ok";
+        return "response";
     }
 }
