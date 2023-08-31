@@ -19,11 +19,11 @@ public class OrderControllerV2 {
     @GetMapping("/v2/request")
     public String request(String itemId) {
         orderService.orderItem(itemId);
-        return "ok";
+        return "response";
     }
 
     @GetMapping("/v2/no-log")
     public String noLog() {
-        return "ok";
+        return "response";
     }
 }
