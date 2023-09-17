@@ -17,7 +17,10 @@ public class JdbcDynamicProxyTest {
 
         TimeInvocationHandler invocationHandler = new TimeInvocationHandler(target);
 
-        Object proxy = Proxy.newProxyInstance(AInterface.class.getClassLoader(), new Class[]{AInterface.class}, invocationHandler);
+        AInterface proxy = (AInterface) Proxy.newProxyInstance(AInterface.class.getClassLoader(), new Class[]{AInterface.class}, invocationHandler);
 
+        proxy.callInterfaceA();
+        log.info("targetClass = {}", target.getClass());
+        log.info("proxyClass = {}", proxy.getClass());
     }
 }
